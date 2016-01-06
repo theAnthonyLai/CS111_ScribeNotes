@@ -6,7 +6,7 @@
         <meta name="keywords" content="UCLA, CS, Eggert, CS 111, Scribe Notes, Winter 2016">
         <meta name="author" content="James Wang and Yu-Kuan (Anthony) Lai">
         <title>CS 111 Winter 2016 Lecture 1 Scribe Notes</title>
-        <link type="text/css" rel="stylesheet" href="css/custom.css"></style>
+        <link type="text/css" rel="stylesheet" href="css/custom.css"></link>
     </head>
 
     <body>
@@ -68,7 +68,7 @@
 				<li><b>Our Textbook's Definition</b></li>
 					<p>A set of interconnected components that has a specified behavior observed at the interface of its environment</p>
 					<figure>
-						<img src="images\System.png" alt="System and Environment" style="width:750px;height:360px;">
+						<img class="system" src="images\System.png" alt="System and Environment" style="width:750px;height:360px;">
 						<figcaption>Figure 1: Basic diagram of a system. Subcomponents joined together form the system. The behavior of each subsystem is invisible to the environment.
 						Users in the environment can interact with the system via an interface.</figcaption>
 					</figure>
@@ -93,8 +93,24 @@
 				<li> Reliability + Error Handling </li>
 				<li> Security </li>
 			</ul>
-			
-        <h2>PLACEHOLDER</h2>
+        
+        
+        <h2><span>Placeholder</span></h2>
+        <p>Let us examine an example of <span>some stuff here</span>. We type the following commands into a console of <b>circa 2008 hardware</b>.</p>
+        <code>
+            <p>$ ls -l big</p>
+            <p>-rw-rw-r--1 eggert faculty 9223372036854775000 Oct 6 11:31 big</p>
+            <p>$ grep x big</p>
+            <p>$ time grep x big</p>
+            <p>real&#9;0m0.009s</p>
+        </code>
+        <p>As we can see from the second line, the file, <samp>big</samp>, is 9223372036854775000 bytes big. However, estimating from the output of <samp>time</samp> on the fifth line, the <samp>grep</samp> command read the file at a speed of 10<sup>22</sup> bits/seconds. <span>This speed is impossible</span></p>
+        <div class="side-notes">
+            <h3>Side Notes - <span>How fast can we transfer data?</span></h3>
+            <p>
+                According to <a href="http://what-if.xkcd.com/31/">What If?</a>, the bandwidth of Internet is about <span>16.7</span> Tb/s, or ~10<sup>11</sup> bits/seconds. If we use all the freight trucks in United States to transfer SD cards us (which by the way will cost $1.2 million/gallon), we can achieve about 0.52 zettabit persecond (zetta = 10<sup>21</sup>)
+            </p>
+        </div>
         
         <h2>Problem Areas in Operating System Design</h2>
             <ol>

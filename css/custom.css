@@ -4,7 +4,7 @@ span {  /* for editing purposes */
 
 body {
     font-family: sans-serif;
-    font-size: 0.8em;
+    font-size: 0.85em;
     line-height: 1.2;
     margin: 35px;
 }
@@ -16,7 +16,8 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, code {
 
 /*  headers */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: bold;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
 }
 
 h1 {
@@ -47,7 +48,13 @@ a:hover {
     text-decoration: underline;
 }
 
-li {
+ul > li, ol > li {
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+ul ul li {
+    font-weight: normal;
     margin-bottom: 1px;
 }
 
@@ -89,6 +96,10 @@ quote p, quote ol {
 
 quote ol {  /* to account for default 40px padding */
     padding-left: 20px;
+}
+
+quote > ol > li {
+    font-weight: normal;
 }
 
 code p {

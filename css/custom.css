@@ -28,6 +28,7 @@ h2 {
     border-bottom: 1px solid #999999;
 }
 
+/* texts in general */
 p {
     margin-bottom: 5px;
 }
@@ -46,10 +47,14 @@ a:hover {
     text-decoration: underline;
 }
 
+li {
+    margin-bottom: 1px;
+}
+
 /* blocks */
 code, .side-notes {
     display: block;
-    margin-left: 30px;
+    margin: 0 0 10px 30px;
     padding: 15px;
     /*border-radius: 3px;*/
     border: 1px solid #e6e6e6;
@@ -76,10 +81,14 @@ quote {
     padding: 10px 0 10px 20px;
 }
 
-quote p {
+quote p, quote ol {
     font-style: italic;
     margin: 0;
-    color: #999999;
+    color: #737373;
+}
+
+quote ol {  /* to account for default 40px padding */
+    padding-left: 20px;
 }
 
 code p {

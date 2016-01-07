@@ -1,5 +1,5 @@
 span {  /* for editing purposes */
-    /*color: red;*/
+    color: red;
 }
 
 body {
@@ -27,6 +27,7 @@ h1 {
 h2 {
     font-size: 1.8em;
     border-bottom: 1px solid #999999;
+    padding-bottom: 2px;
 }
 
 /* texts in general */
@@ -56,6 +57,11 @@ ul > li, ol > li {
 ul ul li {
     font-weight: normal;
     margin-bottom: 1px;
+}
+
+.credit {
+    font-style: italic;
+    margin: -5px 0 10px 120px;
 }
 
 /* blocks */

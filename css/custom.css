@@ -1,5 +1,5 @@
 span {  /* for editing purposes */
-    color: red;
+    /*color: red;*/
 }
 
 body {
@@ -32,14 +32,40 @@ p {
     margin-bottom: 5px;
 }
 
+a {
+    text-decoration: none;
+    color: #1a8cff;
+}
+
+a:visited {
+    color: #1a8cff;
+}
+
+a:hover {
+    /*font-weight: 600;*/
+    text-decoration: underline;
+}
+
 /* blocks */
 code, .side-notes {
     display: block;
     margin-left: 30px;
-    background-color: #f2f2f2;
     padding: 15px;
-    border-radius: 3px;
+    /*border-radius: 3px;*/
     border: 1px solid #e6e6e6;
+}
+
+code {
+    background-color: #f2f2f2;
+}
+
+.side-notes {
+    border-left: 4px solid #007fff;
+}
+
+.side-notes h3 {
+    color: #0066cc;
+    font-style: italic;
 }
 
 quote {
@@ -60,8 +86,4 @@ code p {
     font-family: Courier New, Courier, serif; 
     font-weight: bold;
     margin-bottom: 3px;
-}
-
-.side-notes {
-    margin-left: 30px;
 }

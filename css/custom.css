@@ -64,6 +64,10 @@ ul ul li {
     margin: -5px 0 10px 120px;
 }
 
+samp {
+    font-size: 1.1em;   
+}
+
 /* blocks */
 code, .side-notes {
     display: block;

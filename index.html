@@ -99,7 +99,7 @@
         
         
         <h2><span>An Example: Intensional File System</span></h2>
-        <p>Let us examine <span>a simple command-line interaction here</span>. We typed the following commands into a console of <b>circa 2008 hardware</b>.</p>
+        <p>Let us examine <span>a simple command-line interaction </span>. We typed the following commands into a console of <b>circa 2008 hardware</b>.</p>
         <code>
             <p>$ ls -l big</p>
             <p>-rw-rw-r--1 eggert faculty 9223372036854775000 Oct 6 11:31 big</p>
@@ -107,13 +107,13 @@
             <p>$ time grep x big</p>
             <p>real&#9;0m0.009s</p>
         </code>
-        <p>As we can see from the second line, the file, <samp>big</samp>, is 9223372036854775000 bytes big. However, estimating from the output of <samp>time</samp> on the fifth line, the <samp>grep</samp> command read the file at a speed of 10<sup>22</sup> bits/seconds. <span>This speed is virtually impossible.</span></p>
+        <p>As we can see from the second line, the file, <samp>big</samp>, is 9223372036854775000 bytes big. However, estimating from the output of <samp>time</samp> on the fifth line, the <samp>grep</samp> command read the file at a speed of 10<sup>22</sup> bits/seconds. <span>This speed is virtually impossible to achieve if we actually process every byte.</span></p>
         <p>So what happened here? First, when we created the file <samp>big</samp>, the command we used was</p>
         <code>
             <p>$truncate 9223372036854775000 big</p>
         </code>
-        <p>As seen from its manual page, <samp>truncate</samp> "truncate or extend a file to a specified length". So when we typed the above command, the file <samp>big</samp> with 9223372036854775000 of nullbytes is created. The key here, however, is that <samp>truncate</samp> did not actually craete a file of that size. Instead, it used <b>Intensional File System</b> and just remember that the file has 9223372036854775000 of nullbyes.</p>
-        <p>When we ran the <samp>grep</samp> command, <samp>grep</samp> first consult the file type. It realized that this file only contains nullbyte, so it just return false immediately, without actually looking through 9223372036854775000 bytes of data.</p>
+        <p>As seen from its manual page, <samp>truncate</samp> "truncate or extend a file to a specified length". So when we typed the above command, the file <samp>big</samp> with 9223372036854775000 of nullbytes was created. The key here, however, is that <samp>truncate</samp> did not actually create a file of that size. Instead, because it was an <b>intensional file</b>, the system interepreted a reminder that the file had 9223372036854775000 of nullbyes.</p>
+        <p>When we ran the <samp>grep</samp> command, <samp>grep</samp> first consulted the file type before interpreting it appropriately. It realized that this file only contained nullbytes, so it just returned false immediately, without actually looking through 9223372036854775000 bytes of data.</p>
         <div class="side-notes">
             <h3>Side Notes - How fast can we transfer data?</h3>
             <p>

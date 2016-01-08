@@ -117,3 +117,8 @@ code p {
     font-weight: bold;
     margin-bottom: 3px;
 }
+
+/* images and stuff */
+figcaption {
+    font-style: italic;
+}

@@ -49,8 +49,8 @@ a:hover {
     text-decoration: underline;
 }
 
-ul > li, ol > li {
-    font-weight: bold;
+ul > li > h4, ol > li > h4 {
+    font-weight: 700;
     margin-bottom: 3px;
 }
 

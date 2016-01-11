@@ -15,7 +15,22 @@
         <h1>CS 111 Winter 2016 Lecture 1 Scribe Notes</h1>
         <div class="credit">by James Wang and Anthony Lai for a lecture by Professor Paul Eggert on Jan 04, 2016</div>
         <h2>Table of Contents</h2>
-        <h2>Course Logistics</h2>
+        <ul class="toc">
+            <li><a href="#logistic"><h4>Course Logistics</h4></a></li>
+            <li><a href="#system"><h4>What is a System?</h4></a></li>
+            <li><a href="#ifs"><h4>An Exmaple: Intensional File System</h4></a></li>
+            <li>
+                <a href="#problems"><h4>Problem Areas in Operating System Design</h4></a>
+                <ol>
+                    <li><a href="#problem1">Incommensurate Scaling</a></li>
+                    <li><a href="#problem2">Emergent Properties</a></li>
+                    <li><a href="#problem3">Propogation of Effects</a></li>
+                    <li><a href="#problem4">Trade Offs</a></li>
+                </ol>
+            </li>
+        </ul>
+        
+        <h2 id="logistic">Course Logistics</h2>
         <div>
             <p><i>Follow this <a href="http://web.cs.ucla.edu/classes/winter16/cs111/" target="_blank">link</a> for the course website</i></p>
             <h4>Grading and Distribution</h4>
@@ -62,7 +77,7 @@
             </ul>
         </div>
         
-        <h2>What is a System?</h2>
+        <h2 id="system">What is a System?</h2>
 			<p> The definition of the word "system" (and later the phrase "operating system") has been rather vague since it first appeared. The following section consists of a few definitions from various sources with what insight we may glean from the definitions therein.</p>
 			
 			<h3> System </h3>
@@ -125,7 +140,7 @@
 			</ul>
         
         
-        <h2><span>An Example: Intensional File System</span></h2>
+        <h2 id="ifs"><span>An Example: Intensional File System</span></h2>
         <p>Let us examine <span>a simple command-line interaction </span>. We typed the following commands into a console of <b>circa 2008 hardware</b>.</p>
         <div class="code">
             <p>$ ls -l big</p>
@@ -148,9 +163,9 @@
             </p>
         </div>
         
-        <h2>Problem Areas in Operating System Design</h2>
+        <h2 id="problems">Problem Areas in Operating System Design</h2>
             <ol>
-                <li>
+                <li id="problem1">
                     <h4>Incommensurate Scaling</h4>
 					<p>In development, as project get larger often times not everything scales at the same rate. There are two primary categories of changes that this can cause: economies of scale (coined by Adam Smith) and likewise diseconomies of scale.</p>
 					<p>Economies of scale describe components that have a decrease in cost per unit as a system grows. A blacksmith with a grindstone creates pins more efficiently than having every member of the general populace dedicated to production, 
@@ -158,14 +173,14 @@
 					<p>On the other side of the coin, diseconomies of scale are components that have an increase in cost per unit as a system grows. While a star network is viable for few hosts, for several hundred hosts the interconnections become horribly
 					inefficient. Diseconomies of scale can break a growing system.</p>
                 </li>
-                <li>
+                <li id="problem2">
                     <h4>Emergent Properties</h4>
 					<p>Sometimes properties undetected in the early, small versions of a system may emerge as the system grows in size. Indeed, an unexpected emergent property may have been present but unnoticed in early verisons of the system. 
 					For example, when civil engineers constructed the Tacoma Narrows bridge they did so with consideration to the strongest possible gusts of wind. However, because of the unprecedented length of the bridge, resonance frequency, a previously
 					negligible factor, became a huge problem. The gusts of wind triggered the resonance frequency of the bridge and it collapsed. It was a valuable and costly lesson on the importance of accounting for emergent 
 					properties.</p>
                 </li>
-                <li>
+                <li id="problem3">
                     <h4>Propagation of Effects</h4>
 					<p>This term describes the phenomenon in which a seemingly local change or failure can have a profound impact on some other part of the system. For example, a tree falling on a power line in Oregon may knock out the power
 					of a building in a completely different state, thousands of miles away.</p>
@@ -175,7 +190,7 @@
                     If we allow the second byte to be anything, then it could be the ASCII '\', and hence trying to rename a file in the file system to a Japanese character could cause it to break the title into subdirectories and look at a wrong or nonexistent location.</p>
                     <p>One possible solution would be to use UTF-8 encodings. This has its own upsides and downsides, as we will discuss next. </p>
                 </li>
-				<li>
+				<li id="problem4">
                     <h4>Trade Offs</h4>
 					<p> Trade offs can be summarized by the Waterbed Effect; if we have a water bed and we apply downward pressure to a part of it, certainly another part will suddenly spring upwards. The water must be sent somewhere else. Systems design 
 					always considers trade offs.</p>

@@ -119,3 +119,16 @@ samp {
 figcaption {
     font-style: italic;
 }
+
+/* table of content */
+.toc a {
+    color: black;
+    text-decoration: underline;
+}
+
+.toc li {
+    margin-bottom: 3px;
+}
+.toc h4 {
+    margin-bottom: 0;
+}

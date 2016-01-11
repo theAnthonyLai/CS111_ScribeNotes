@@ -131,26 +131,29 @@
         
         <h2>Problem Areas in Operating System Design</h2>
             <ol>
-                <li>Incommensurate Scaling</li>
+                <li><h4>Incommensurate Scaling</h4>
 					<p>In development, as project get larger often times not everything scales at the same rate. There are two primary categories of changes that this can cause: economies of scale (coined by Adam Smith) and likewise diseconomies of scale.</p>
 					<p>Economies of scale describe components that have a decrease in cost per unit as a system grows. A blacksmith with a grindstone creates pins more efficiently than having every member of the general populace dedicated to production, 
 					especially as the size of the populace increases. Economies of scale can cause waste.</p>
 					<p>On the other side of the coin, diseconomies of scale are components that have an increase in cost per unit as a system grows. While a star network is viable for few hosts, for several hundred hosts the interconnections become horribly
-					inefficient. Diseconomies of scale can break a growing system.</p>
-                <li>Emergent Properties</li>
+					inefficient. Diseconomies of scale can break a growing system.</p></li>
+                <li><h4>Emergent Properties</h4>
 					<p>Sometimes properties undetected in the early, small versions of a system may emerge as the system grows in size. Indeed, an unexpected emergent property may have been present but unnoticed in early verisons of the system. 
 					For example, when civil engineers constructed the Tacoma Narrows bridge they did so with consideration to the strongest possible gusts of wind. However, because of the unprecedented length of the bridge, resonance frequency, a previously
 					negligible factor, became a huge problem. The gusts of wind triggered the resonance frequency of the bridge and it collapsed. It was a valuable and costly lesson on the importance of accounting for emergent 
-					properties.</p>
-				<li>Propagation of Effects</li>
+					properties.</p></li>
+				<li><h4>Propagation of Effects</h4>
 					<p>This term describes the phenomenon in which a seemingly local change or failure can have a profound impact on some other part of the system. For example, a tree falling on a power line in Oregon may knock out the power
 					of a building in a completely different state, thousands of miles away.</p>
-					<p>The pathways for progagation are more "effective" in a digital system, where a single component change can be very profound.
-				<li>Trade Offs</li>
+					<p>The pathways for progagation are more "effective" in a digital system, where a single component change can be very profound.</p></li>
+                    <p>For example, if we had a system that contained an international characters component as well as a file system component, we could have a feature in the international characters that breaks the file system. How? Well, the encoding of Japanese characters could be in Shift-JIS, where the first byte is all 1's and the second byte could be anything.
+                    If we allow the second byte to be anything, then it could be the ASCII '\', and hence trying to rename a file in the file system to a Japanese character could cause it to break the title into subdirectories and look at a wrong or nonexistent location.</p>
+                    <p>One possible solution would be to use UTF-8 encodings. This has its own upsides and downsides, as we will discuss next. </p>
+				<li><h4>Trade Offs</h4>
 					<p> Trade offs can be summarized by the Waterbed Effect; if we have a water bed and we apply downward pressure to a part of it, certainly another part will suddenly spring upwards. The water must be sent somewhere else. Systems design 
-					always considers trade offs.
+					always considers trade offs.</p>
 					<p> If we used the UTF-8 coding instead of the shift-JIS coding, we would avoid the backslash error but would in turn have to represent Japanese characters with 3 bytes instead of 2. </p>
-					<p> If we added additional security measures to keep grading information at UCLA more secure, we would have to consider other factors like maintenance costs or cranky faculty. The added benefit, of course, would be the security. </p>
+					<p> If we added additional security measures to keep grading information at UCLA more secure, we would have to consider other factors like maintenance costs or cranky faculty. The added benefit, of course, would be the security. </p></li>
             </ol>
     </body>
 </html>

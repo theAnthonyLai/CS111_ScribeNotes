@@ -67,38 +67,57 @@
 			
 			<h3> System </h3>
 			<ul>
-				<li><b> OED Original (1928)</b></li>
-					<quote>
+				<li>
+                    <h4>OED Original (1928)</h4>
+                    <div class="quote">
                         <ol>
 				            <li> An organized or connected group of objects. </li>
 				            <li> A set of principles, etc., a scheme, method </li>
 				        </ol>
-                    </quote>
+                    
+                    </div>
 					<p>derived from the Greek "sýstēma" - organized whole, government, constitution, a body of people or animals, a musical interval</p>
 					<p>root: "set up with"</p>
-				<li><b>Our Textbook's Definition</b></li>
-                    <quote><p>A set of interconnected components that has a specified behavior observed at the interface of its environment</p></quote>
+                </li>
+				<li>
+                    <h4>Our Textbook's Definition</h4>
+                    <div class="quote">
+                        <p>A set of interconnected components that has a specified behavior observed at the interface of its environment</p>
+                    </div>
 					<figure>
 						<img class="system" src="images/System.png" alt="System and Environment" style="width:750px;height:360px;">
 						<figcaption>Figure 1: Basic diagram of a system. Subcomponents joined together form the system. The behavior of each subsystem is invisible to the environment.
 						Users in the environment can interact with the system via an interface.</figcaption>
 					</figure>
+                </li>
 			</ul>
 			<h3> Operating System </h3>
 			<ul>
-				<li>American Heritage Dictionary (2000)</li>
-                    <quote><p>Software designed to control hardware of a specific data processing system in order to allow users and application programs to make use of it.</p></quote>
-				<li>Encarta (2007)</li>
-                    <quote><p>Master control program in a computer</p></quote>
-				<li>Wikipedia v.698216816 (2016-01-04)</li>
-                    <quote><p>Collection of smaller programs and software that is used to control and operate the computer system</p></quote>
+                <li>
+                    <h4>American Heritage Dictionary (2000)</h4>
+                    <div class="quote">
+                        <p>Software designed to control hardware of a specific data processing system in order to allow users and application programs to make use of it.</p>
+                    </div>
+                </li>
+                <li>
+                    <h4>Encarta (2007)</h4>
+                    <div class="quote">
+                        <p>Master control program in a computer</p>
+                    </div>
+                </li>
+                <li>
+                    <h4>Wikipedia v.698216816 (2016-01-04)</h4>
+                    <div class="quote">
+                        <p>Collection of smaller programs and software that is used to control and operate the computer system</p>      
+                    </div>
+                </li>
 			</ul>
 			
 			<p>So what have we learned from these definitions? Well, according to the non-professionals (the English scholars), the professionals (Microsoft), and the unwashed public (Wikipedia), operating systems all have to do with control.
 			Furthermore, we realize that the American Heritage Dictionary is a bit outdated because it has the phrase "specific data processing system" whereas nowadays systems are quite portable. The Wikipedia page slips up by using the word
 			"operate" in the definition of "operating system". Lastly, there are some major issues in operating systems that these definitions do not address.</p>
 			
-			<h3> Some big concerns... </h3>
+			<h3>Some big concerns...</h3>
 			<ul> 
 				<li>Resouce Management</li>
 				<li>Reliability + Error Handling</li>
@@ -108,18 +127,18 @@
         
         <h2><span>An Example: Intensional File System</span></h2>
         <p>Let us examine <span>a simple command-line interaction </span>. We typed the following commands into a console of <b>circa 2008 hardware</b>.</p>
-        <code>
+        <div class="code">
             <p>$ ls -l big</p>
             <p>-rw-rw-r--1 eggert faculty 9223372036854775000 Oct 6 11:31 big</p>
             <p>$ grep x big</p>
             <p>$ time grep x big</p>
             <p>real&#9;0m0.009s</p>
-        </code>
+        </div>
         <p>As we can see from the second line, the file, <samp>big</samp>, is 9223372036854775000 bytes big. However, estimating from the output of <samp>time</samp> on the fifth line, the <samp>grep</samp> command read the file at a speed of 10<sup>22</sup> bits/seconds. <span>This speed is virtually impossible to achieve if we actually process every byte.</span></p>
         <p>So what happened here? First, when we created the file <samp>big</samp>, the command we used was</p>
-        <code>
+        <div class="code">
             <p>$truncate 9223372036854775000 big</p>
-        </code>
+        </div>
         <p>As seen from its manual page, <samp>truncate</samp> "truncate or extend a file to a specified length". So when we typed the above command, the file <samp>big</samp> with 9223372036854775000 of nullbytes was created. The key here, however, is that <samp>truncate</samp> did not actually create a file of that size. Instead, because it was an <b>intensional file</b>, the system interepreted a reminder that the file had 9223372036854775000 of nullbyes.</p>
         <p>When we ran the <samp>grep</samp> command, <samp>grep</samp> first consulted the file type before interpreting it appropriately. It realized that this file only contained nullbytes, so it just returned false immediately, without actually looking through 9223372036854775000 bytes of data.</p>
         <div class="side-notes">
@@ -131,29 +150,38 @@
         
         <h2>Problem Areas in Operating System Design</h2>
             <ol>
-                <li><h4>Incommensurate Scaling</h4>
+                <li>
+                    <h4>Incommensurate Scaling</h4>
 					<p>In development, as project get larger often times not everything scales at the same rate. There are two primary categories of changes that this can cause: economies of scale (coined by Adam Smith) and likewise diseconomies of scale.</p>
 					<p>Economies of scale describe components that have a decrease in cost per unit as a system grows. A blacksmith with a grindstone creates pins more efficiently than having every member of the general populace dedicated to production, 
 					especially as the size of the populace increases. Economies of scale can cause waste.</p>
 					<p>On the other side of the coin, diseconomies of scale are components that have an increase in cost per unit as a system grows. While a star network is viable for few hosts, for several hundred hosts the interconnections become horribly
-					inefficient. Diseconomies of scale can break a growing system.</p></li>
-                <li><h4>Emergent Properties</h4>
+					inefficient. Diseconomies of scale can break a growing system.</p>
+                </li>
+                <li>
+                    <h4>Emergent Properties</h4>
 					<p>Sometimes properties undetected in the early, small versions of a system may emerge as the system grows in size. Indeed, an unexpected emergent property may have been present but unnoticed in early verisons of the system. 
 					For example, when civil engineers constructed the Tacoma Narrows bridge they did so with consideration to the strongest possible gusts of wind. However, because of the unprecedented length of the bridge, resonance frequency, a previously
 					negligible factor, became a huge problem. The gusts of wind triggered the resonance frequency of the bridge and it collapsed. It was a valuable and costly lesson on the importance of accounting for emergent 
-					properties.</p></li>
-				<li><h4>Propagation of Effects</h4>
+					properties.</p>
+                </li>
+                <li>
+                    <h4>Propagation of Effects</h4>
 					<p>This term describes the phenomenon in which a seemingly local change or failure can have a profound impact on some other part of the system. For example, a tree falling on a power line in Oregon may knock out the power
 					of a building in a completely different state, thousands of miles away.</p>
-					<p>The pathways for progagation are more "effective" in a digital system, where a single component change can be very profound.</p></li>
+					<p>The pathways for progagation are more "effective" in a digital system, where a single component change can be very profound.</p>
+                
                     <p>For example, if we had a system that contained an international characters component as well as a file system component, we could have a feature in the international characters that breaks the file system. How? Well, the encoding of Japanese characters could be in Shift-JIS, where the first byte is all 1's and the second byte could be anything.
                     If we allow the second byte to be anything, then it could be the ASCII '\', and hence trying to rename a file in the file system to a Japanese character could cause it to break the title into subdirectories and look at a wrong or nonexistent location.</p>
                     <p>One possible solution would be to use UTF-8 encodings. This has its own upsides and downsides, as we will discuss next. </p>
-				<li><h4>Trade Offs</h4>
+                </li>
+				<li>
+                    <h4>Trade Offs</h4>
 					<p> Trade offs can be summarized by the Waterbed Effect; if we have a water bed and we apply downward pressure to a part of it, certainly another part will suddenly spring upwards. The water must be sent somewhere else. Systems design 
 					always considers trade offs.</p>
 					<p> If we used the UTF-8 coding instead of the shift-JIS coding, we would avoid the backslash error but would in turn have to represent Japanese characters with 3 bytes instead of 2. </p>
-					<p> If we added additional security measures to keep grading information at UCLA more secure, we would have to consider other factors like maintenance costs or cranky faculty. The added benefit, of course, would be the security. </p></li>
+					<p> If we added additional security measures to keep grading information at UCLA more secure, we would have to consider other factors like maintenance costs or cranky faculty. The added benefit, of course, would be the security. </p>
+                </li>
             </ol>
     </body>
 </html>

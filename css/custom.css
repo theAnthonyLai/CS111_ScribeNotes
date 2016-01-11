@@ -9,7 +9,7 @@ body {
     margin: 35px;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol, code {
+h1, h2, h3, h4, h5, h6, p, ul, ol, .code {
     margin-top: 0;
     margin-bottom: 10px;
 }
@@ -52,6 +52,7 @@ a:hover {
 ul > li > h4, ol > li > h4 {
     font-weight: 700;
     margin-bottom: 3px;
+    font-size: 1.1em;
 }
 
 ul ul li {
@@ -69,16 +70,18 @@ samp {
 }
 
 /* blocks */
-code, .side-notes {
+.code, .side-notes {
     display: block;
-    margin: 0 0 10px 30px;
+    margin: 10px 0 10px 30px;
     padding: 15px;
     /*border-radius: 3px;*/
     border: 1px solid #e6e6e6;
 }
 
-code {
+.code {
     background-color: #f2f2f2;
+    font-family: Courier New, Courier, serif; 
+    font-weight: bold;
 }
 
 .side-notes {
@@ -90,7 +93,7 @@ code {
     font-style: italic;
 }
 
-quote {
+.quote {
     display: block;
     margin: 5px 0 5px 30px;
     /*border: 1px solid red;*/
@@ -98,24 +101,18 @@ quote {
     padding: 10px 0 10px 20px;
 }
 
-quote p, quote ol {
+.quote p, .quote ol {
     font-style: italic;
     margin: 0;
     color: #737373;
 }
 
-quote ol {  /* to account for default 40px padding */
+.quote ol {  /* to account for default 40px padding */
     padding-left: 20px;
 }
 
-quote > ol > li {
+.quote > ol > li {
     font-weight: normal;
-}
-
-code p {
-    font-family: Courier New, Courier, serif; 
-    font-weight: bold;
-    margin-bottom: 3px;
 }
 
 /* images and stuff */
